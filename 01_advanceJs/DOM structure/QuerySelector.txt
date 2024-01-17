@@ -1,0 +1,2 @@
+document object has some document properties which help us to interact with DOM structure
+
