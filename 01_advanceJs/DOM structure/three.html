@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+<script>
+    const div = document.createElement('h1') // this will create h1 tag in htmlbut it will not added to you code file.
+    console.log(div);
+    div.className = "main"; // this will add class named main in div tag
+    div.id = Math.floor(Math.random() * 10 + 1) // to add id
+    div.setAttribute("title", "generated title")
+    div.style.backgroundColor = "green"
+    div.style.padding = "12px"
+    // div.innerHTML = "Chai or Code"
+    const addText = document.createTextNode("Chai or Code") //
+    div.appendChild(addText) // this will add text to div element
+    document.body.appendChild(div) // with this we can see text on page
+
+    // we can wrap this whole code in a function and can call this function and can also pass the text which have to print
+</script>
+</html>l
