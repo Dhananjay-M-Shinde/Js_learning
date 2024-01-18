@@ -1,18 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FourHTML</title>
 </head>
 <script>
-    function addLanguage(langName){
+    function addLanguage(langName) {
 
     }
 </script>
+
 <body style="background-color: #212121; color: #fff;">
     <ul class="language">
         <li>JavaScript</li>
     </ul>
 </body>
+<script>
+    // How to create and add element to page
+    function addLanguage(langName) {
+        const li = document.createElement('li') // this will create list element
+        li.innerHTML = `${langName}` // this will add content in list element
+        document.querySelector('.language').appendChild(li) // this will append the newly created element where we want with the help of query selector
+    }
+    addLanguage('Python')
+    // above method of adding element to page is not so optimize because whenever we use .innerHTML first it brings the previous text then replace it with new text because of this there is whole tree travelsal happen
+
+
+    function addOptimizeLang(langName) {
+        const li = document.createElement('li') // thid will create new element
+        li.appendChild(document.createTextNode(langName)) // here we are creating text node and also appending it in li element with the help of appendChild
+        document.querySelector('.language').appendChild(li) // here we are appending li element in a tag whoes class name is language
+    }
+    addOptimizeLang('Java')
+    // above method of adding element is more optimize so when you are working on large project this way should be follow.
+
+    // how to edit element
+    const secondLang = document.querySelector('li:nth-child(2)')
+    // console.log(secondLang);
+    // secondLang.innerHTML = "golang" // this is the one way to edit element but not so optimize
+    const newLi = document.createElement('li') // creating new element
+    newLi.textContent = "golang"  // adding content to that element
+    secondLang.replaceWith(newLi) // replacing old element with new element
+    
+    // another way to edit element
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = '<li>ruby<li>' // this will replace first element to ruby
+
+    // remove element
+    const lastlang = document.querySelector('li:last-child');
+    console.log(lastlang);
+    lastlang.remove(); // this will remove tag
+</script>
+
 </html>
