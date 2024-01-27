@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApiRequest</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <h1>Hiii....</h1>
+</body>
+<script>
+    const apiUrl = "https://randomuser.me/api/";
+    const api = "https://api.github.com/users/Dhananjay-M-Shinde";
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', api); // initialize the  request
+    console.log("after open");
+    // 0: UNSENT - Client has been created. open() not called yet.
+    // 1: OPENED - open() has been called.
+    // 2: HEADERS_RECEIVED - send() has been called, and headers and status are available.
+    // 3: LOADING - Downloading; responseText holds partial data.
+    // 4: DONE - The operation is complete.
+    xhr.onreadystatechange = () =>{ // there are total 4 states this function i.e onreadystatechange is a eventListener which detect the changes in state
+        console.log(xhr.readyState); // it gives the state 0, 1, 2, 3, 4
+        if(xhr.readyState === 4){
+            const data = JSON.parse(xhr.responseText); // response comes in object form so we need to convert it to json
+            console.log(data);
+            console.log(`you total followers are ${data.followers}`);  // we can give any name instead responseText
+            const data1 = xhr.responseText; // if you not parse it to json format then you can access object by below way
+            console.log(data['followers']);  
+        }
+    }
+    console.log("just before");
+    xhr.send(); // sending request to server
+</script>
+</html>
