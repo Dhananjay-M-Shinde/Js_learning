@@ -1,9 +1,10 @@
-console.log((Math.floor(Math.random()*10))+1);
+console.log((Math.floor(Math.random()*10))+1);  //random function generate the value between 0 to 1. it gives fractional values
 const min = 40;
 const max = 77;
 
-console.log(Math.floor((Math.random() * (max-min) + 1) + min));
+console.log(Math.floor((Math.random() * (max-min) + 1) + min)); // to generate the value between any range here the range is 40 to 77
 let myDate = new Date();
+console.log(myDate);
 console.log(myDate.toString());
 console.log(myDate.toLocaleString());
 console.log(myDate.toLocaleDateString());
